@@ -1,11 +1,23 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import CounterScreen from "./src/screens/CounterScreen";
 
-export default function App() {
+import { store } from "./src/redux/store";
+import { Provider } from "react-redux";
+
+export default () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+
+function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+      <CounterScreen />
     </View>
   );
 }
