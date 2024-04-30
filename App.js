@@ -4,10 +4,12 @@ import CounterScreen from "./src/screens/CounterScreen";
 
 import { store } from "./src/redux/store";
 import { Provider } from "react-redux";
+import Loader from "./src/components/loader/Loader";
 
 export default () => {
   return (
     <Provider store={store}>
+      <Loader />
       <App />
     </Provider>
   );
